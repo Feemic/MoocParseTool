@@ -94,7 +94,7 @@ class Mooc_Login(Mooc):
         return html_result
 
 """
-多线程实现批量获取PDF文档
+多线程 map 实现批量获取PDF文档
 ============================================================================
 生产者，消费者设计模式
 """
@@ -151,12 +151,13 @@ def get_pdf_list(course_id):
 import time
 def is_couse_going(start_time,end_time):
     cur_time = int(time.time()*1000)
-    if end_time < cur_time:
+    if cur_time > end_time:
         return 0 #已经结束
-    elif start_time > cur_time:
+    elif cur_time < start_time:
         return 2 #还没开始
     else:
         return 1 #正在进行
+
 
 
 		
