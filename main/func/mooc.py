@@ -35,9 +35,9 @@ def mooc_submit():
     if  form.validate_on_submit():
         tid = func.fast_mooc.get_tid_by_param(param).strip()
         if tid:
-			return mooc_resolution(tid,save_flag=True)
+		return mooc_resolution(tid,save_flag=True)
         else:            
-			if 'http://' in param:
+	    if 'http://' in param:
                 flash(u"当前仅支持icourse163的课程，请检查网址或参数是否正确")
             else:
                 return mooc_search(param)
@@ -45,8 +45,7 @@ def mooc_submit():
 
 @main.route('/mooc/<string:tid>', methods=['GET','POST'])
 def mooc_api(tid):
-    return mooc_resolution(tid =tid,save_flag=False)
-
+    return mooc_resolution(tid =tid,save_flag=False
 
 @main.route('/mooc_search/<string:tid>', methods=['GET','POST'])
 def mooc_search_api(tid):
