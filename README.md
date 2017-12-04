@@ -16,5 +16,5 @@
 - [x] 多线程 pool Map
 - [x] 其他
 
-**安装依赖 requirements.txt **
+**安装依赖 requirements.txt**
 
